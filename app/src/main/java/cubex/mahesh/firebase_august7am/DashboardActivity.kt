@@ -92,7 +92,7 @@ class DashboardActivity : AppCompatActivity() {
     }  // onCreate Methods ...
 
     fun post(token:String) {
-runOnUiThread {
+
     var jsonObjec: JSONObject? = null
     val bodydata = et_msg.text.toString()
     try {
@@ -125,7 +125,7 @@ runOnUiThread {
     val body = RequestBody.create(JSON, jsonObjec!!.toString())
     val request = Request.Builder()
             .addHeader("Content-Type", "application/json")
-            .addHeader("Authorization","AAAAbKH0Cck:APA91bHUyUmmSqLEx4E-WvDFIcQ6BGo6B_V1MkXBCgBmv3R7rSDpR107ppGkwSBhskMKxyW9vpjZWJFzbCgnGIyY_l3JO1RON1NsRCvcvivNRFKzY35RSZQcBPW5r5gzfVL3UgBcpSVg")
+            .addHeader("Authorization","key=AAAAbKH0Cck:APA91bHUyUmmSqLEx4E-WvDFIcQ6BGo6B_V1MkXBCgBmv3R7rSDpR107ppGkwSBhskMKxyW9vpjZWJFzbCgnGIyY_l3JO1RON1NsRCvcvivNRFKzY35RSZQcBPW5r5gzfVL3UgBcpSVg")
             .url("https://fcm.googleapis.com/fcm/send")
             .post(body)
             .build()
@@ -141,13 +141,11 @@ runOnUiThread {
         }
     })
 
-}
-
     }
 
     fun postAll(tokens:MutableList<String>) {
 
-        runOnUiThread {
+
             var jsonObjec: JSONObject? = null
             val bodydata = et_msg.text.toString()
             try {
@@ -182,7 +180,7 @@ runOnUiThread {
             val body = RequestBody.create(JSON, jsonObjec!!.toString())
             val request = Request.Builder()
                     .addHeader("Content-Type", "application/json")
-                    .addHeader("Authorization","AAAAbKH0Cck:APA91bHUyUmmSqLEx4E-WvDFIcQ6BGo6B_V1MkXBCgBmv3R7rSDpR107ppGkwSBhskMKxyW9vpjZWJFzbCgnGIyY_l3JO1RON1NsRCvcvivNRFKzY35RSZQcBPW5r5gzfVL3UgBcpSVg")
+                    .addHeader("Authorization","key=AAAAbKH0Cck:APA91bHUyUmmSqLEx4E-WvDFIcQ6BGo6B_V1MkXBCgBmv3R7rSDpR107ppGkwSBhskMKxyW9vpjZWJFzbCgnGIyY_l3JO1RON1NsRCvcvivNRFKzY35RSZQcBPW5r5gzfVL3UgBcpSVg")
                     .url("https://fcm.googleapis.com/fcm/send")
                     .post(body)
                     .build()
@@ -197,8 +195,5 @@ runOnUiThread {
 
                 }
             })
-
-        }
-
     }
 }
